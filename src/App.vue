@@ -1,28 +1,91 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <nav>
+      <button
+        v-for="tab in tabs"
+        v-bind:key="tab.component"
+        v-bind:class="['tab-button', { active: currentTab === tab }]"
+        v-on:click="currentTab = tab"
+      >
+        {{ tab.title }}
+      </button>
+    </nav>
+
+    <component v-bind:is="currentTab.component" class="tab"></component>
   </div>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
+import Tree from "./components/Tree";
+import Settings from "./components/Settings";
 
+const tabs = [
+  {
+    title: "Дерево",
+    component: "Tree"
+  },
+  {
+    title: "Настройки",
+    component: "Settings"
+  }
+];
 export default {
   name: "app",
   components: {
-    HelloWorld
-  }
+    Tree,
+    Settings
+  },
+  data: () => ({
+    tabs: tabs,
+    currentTab: tabs[0]
+  })
 };
 </script>
 
 <style lang="scss">
+body {
+  background: #87cefa;
+  margin: 0;
+}
 #app {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
+  text-align: left;
   color: #2c3e50;
-  margin-top: 60px;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 10px;
+  min-height: 100vh;
+  min-width: 300px;
+  min-height: 240px;
+  max-width: 100%;
+}
+.tab-button {
+  padding: 6px 10px;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  border: 1px solid #001d3d;
+  color: lighten(#87cefa, 20%);
+  cursor: pointer;
+  background: lighten(#001d3d, 5%);
+  margin-bottom: -1px;
+  margin-right: -1px;
+  &:focus {
+    outline: none;
+  }
+  &:hover,
+  &.active {
+    background: #001d3d;
+  }
+}
+.tab {
+  border: 1px solid #001d3d;
+  padding: 10px;
+  box-sizing: border-box;
+  display: block;
+  background: radial-gradient(lighten(#001d3d, 30%), darken(#001d3d, 5%));
+  // height: calc(100% - 30px);
+  // width: calc(100% - 20px);
 }
 </style>
