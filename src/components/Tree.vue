@@ -42,8 +42,7 @@ ComponentContext.keys().forEach(componentFilePath => {
     .split("/")
     .pop()
     .split(".")[0];
-  blubs[componentName] = async () =>
-    await import("../components/blubs/" + componentName);
+  blubs[componentName] = () => import("../components/blubs/" + componentName);
 });
 
 export default {

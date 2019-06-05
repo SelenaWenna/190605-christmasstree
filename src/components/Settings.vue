@@ -3,24 +3,22 @@
     <fieldset class="settings-group">
       <legend>Настройки анимации</legend>
       <label for="animationDelay" class="setting">
-        Задержка анимации
         <input
           type="number"
           v-model="animationDelay"
           name="animationDelay"
           id="animationDelay"
         />
-        секунд
+        секунд задержка анимации
       </label>
       <label for="animationDuration" class="setting">
-        Длительность анимации
         <input
           type="number"
           v-model="animationDuration"
           name="animationDuration"
           id="animationDuration"
         />
-        секунд
+        секунд длительность анимации
       </label>
     </fieldset>
     <fieldset class="settings-group">
@@ -63,7 +61,7 @@
           value="track"
           id="track"
         />
-        "Дорожка"
+        Чередование лампочек
       </label>
     </fieldset>
     <fieldset class="settings-group">

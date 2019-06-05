@@ -3,7 +3,7 @@ const state = {
   animationDelay: 1000,
   animationDuration: 1,
   defaultColors: {
-    tree: "skyblue"
+    tree: "darkblue"
   },
   colors: [
     "#7CFC00",
