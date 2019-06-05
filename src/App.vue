@@ -85,7 +85,7 @@ body {
   box-sizing: border-box;
   display: block;
   background: radial-gradient(lighten(#001d3d, 30%), darken(#001d3d, 5%));
-  // height: calc(100% - 30px);
-  // width: calc(100% - 20px);
+  min-height: calc(100vh - 50px);
+  overflow: hidden;
 }
 </style>

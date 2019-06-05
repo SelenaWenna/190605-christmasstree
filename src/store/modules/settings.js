@@ -1,28 +1,18 @@
 const state = {
-  animationObject: "tree",
   animationMethod: "replacement",
-  animationDuration: 1500,
-  displayGarland: false,
+  animationDelay: 1000,
+  animationDuration: 1,
   defaultColors: {
-    tree: "yellowgreen",
-    garland: "red"
+    tree: "skyblue"
   },
   colors: [
-    "#FFE4E1",
-    "#E6E6FA",
-    "#F0FFF0",
-    "#87CEFA",
-    "#00FFFF",
-    "#00FF7F",
-    "#ADFF2F",
-    "#EEE8AA",
-    "#CD5C5C",
-    "#F4A460",
-    "#FA8072",
-    "#FFB6C1",
-    "#DB7093",
-    "#EE82EE",
-    "#7FFFD4"
+    "#7CFC00",
+    "#FFFF00",
+    "#FF1493",
+    "#32CD32",
+    "#FF0000",
+    "#FFA500",
+    "#FF00FF"
   ]
 };
 
@@ -30,10 +20,9 @@ const getters = {};
 
 const mutations = {
   changeSettings(state, newSettings) {
-    state.animationObject = newSettings.animationObject;
     state.animationMethod = newSettings.animationMethod;
+    state.animationDelay = newSettings.animationDelay;
     state.animationDuration = newSettings.animationDuration;
-    state.displayGarland = newSettings.displayGarland;
     state.colors = newSettings.colors;
   }
 };

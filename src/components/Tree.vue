@@ -3,7 +3,7 @@
     class="tree"
     xmlns="http://www.w3.org/2000/svg"
     xmlns:xlink="http://www.w3.org/1999/xlink"
-    viewBox="0 0 146.2 195"
+    viewBox="0 0 150 195"
   >
     <radialGradient id="stand" cx="50%" cy="50%" r="33%">
       <stop offset="0%" style="stop-color: #001124" />
@@ -19,11 +19,11 @@
       cy="93%"
     />
     <component
-      v-for="branch in animationModel"
-      :key="branch.name"
-      :is="branch.name"
-      :color="getColor(branch, 'tree')"
-      :style="{ transition: 'fill 0.3s ease-in-out' }"
+      v-for="blub in animationModel"
+      :key="blub.name"
+      :is="blub.name"
+      :color="getColor(blub)"
+      :style="{ transition: `fill ${animationDuration}s ease-in-out` }"
     />
   </svg>
 </template>
@@ -31,9 +31,9 @@
 <script>
 import { mapState } from "vuex";
 
-const branches = {};
+const blubs = {};
 const ComponentContext = require.context(
-  "../components/branches/",
+  "../components/blubs/",
   false,
   /\.vue$/i
 );
@@ -42,8 +42,8 @@ ComponentContext.keys().forEach(componentFilePath => {
     .split("/")
     .pop()
     .split(".")[0];
-  branches[componentName] = async () =>
-    await import("../components/branches/" + componentName);
+  blubs[componentName] = async () =>
+    await import("../components/blubs/" + componentName);
 });
 
 export default {
@@ -52,20 +52,20 @@ export default {
     animationModel: []
   }),
   components: {
-    ...branches
+    ...blubs
   },
   created() {
-    this.animationModel = Object.keys(branches).map((branch, index) => ({
-      name: branch,
+    this.animationModel = Object.keys(blubs).map((blub, index) => ({
+      name: blub,
       off: false,
-      color: this.computeItemColor(index)
+      color: this.computeItemColor(index, "tree")
     }));
-    this.colorizeTree();
+    this.colorize();
   },
   computed: {
     ...mapState("settings", [
-      "animationObject",
       "animationMethod",
+      "animationDelay",
       "animationDuration",
       "defaultColors",
       "colors"
@@ -75,12 +75,14 @@ export default {
     }
   },
   methods: {
-    colorizeTree() {
+    colorize() {
+      const off = !this.animationModel[0].off;
+      const remnant = this.animationModel[0].off ? 1 : 0;
       switch (this.animationMethod) {
         case "onOff":
           this.colorOffset = 0;
           this.animationModel.forEach((element, index) => {
-            element.off = !element.off;
+            element.off = off;
             element.color = this.computeItemColor(index);
           });
           break;
@@ -94,7 +96,14 @@ export default {
         case "сombined":
           this.colorOffset += 1;
           this.animationModel.forEach((element, index) => {
-            element.off = !element.off;
+            element.off = off;
+            element.color = this.computeItemColor(index);
+          });
+          break;
+        case "track":
+          this.colorOffset += 1;
+          this.animationModel.forEach((element, index) => {
+            element.off = index % 2 === remnant;
             element.color = this.computeItemColor(index);
           });
           break;
@@ -102,10 +111,13 @@ export default {
         default:
           break;
       }
-      setTimeout(this.colorizeTree, this.animationDuration);
+      setTimeout(this.colorize, this.animationDelay);
     },
     computeItemColor(index) {
-      if (index < this.animationModel.length && this.animationModel[index].off) {
+      if (
+        index < this.animationModel.length &&
+        this.animationModel[index].off
+      ) {
         return this.defaultColors["tree"];
       }
       let currentColorIndex = index + this.colorOffset;
@@ -117,13 +129,10 @@ export default {
       }
       return this.colors[currentColorIndex];
     },
-    getColor(value, colorizeObject) {
-      if (this.animationObject === colorizeObject) {
-        const branch = this.animationModel.find(branch => branch === value)
-        return branch ? branch.color : this.defaultColors[colorizeObject];
-      }
-      return this.defaultColors[colorizeObject];
-    },
+    getColor(value) {
+      const item = this.animationModel.find(element => element === value);
+      return item ? item.color : this.defaultColors["tree"];
+    }
   }
 };
 </script>
@@ -131,6 +140,9 @@ export default {
 <style lang="scss" scoped>
 .tree {
   height: calc(100vh - 50px);
+  min-height: 165px;
   width: 100%;
+  display: block;
+  margin: 0 auto;
 }
 </style>
