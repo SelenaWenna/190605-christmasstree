@@ -2,14 +2,15 @@
   "name": "cristmasstree",
   "version": "0.1.0",
   "engines": {
-    "node": "10.15.3"
+    "node": "10.15.3",
+    "yarn": "1.13.0"
   },
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "postinstall": "npm install express",
+    "postinstall": "yarn add express",
     "start": "node server.js"
   },
   "dependencies": {
