@@ -1,4 +1,4 @@
-# testtask_10_cristmasstree
+# cristmasstree
 
 ## Project setup
 ```
