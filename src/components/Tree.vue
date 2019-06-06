@@ -32,11 +32,7 @@
 import { mapState } from "vuex";
 
 const blubs = {};
-const ComponentContext = require.context(
-  "./blubs/",
-  false,
-  /\.vue$/i
-);
+const ComponentContext = require.context("./blubs/", false, /\.vue$/i);
 ComponentContext.keys().forEach(componentFilePath => {
   const componentName = componentFilePath
     .split("/")
