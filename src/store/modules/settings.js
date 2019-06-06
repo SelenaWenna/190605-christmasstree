@@ -1,4 +1,5 @@
 const state = {
+  hideTree: false,
   animationMethod: "replacement",
   animationDelay: 1000,
   animationDuration: 1,
@@ -20,6 +21,7 @@ const getters = {};
 
 const mutations = {
   changeSettings(state, newSettings) {
+    state.hideTree = newSettings.hideTree;
     state.animationMethod = newSettings.animationMethod;
     state.animationDelay = newSettings.animationDelay;
     state.animationDuration = newSettings.animationDuration;

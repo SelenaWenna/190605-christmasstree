@@ -1,5 +1,9 @@
 <template>
   <div>
+    <label for="hideTree" class="setting">
+      <input type="checkbox" v-model="hideTree" name="hideTree" id="hideTree" />
+      Скрыть дерево (Показывать только гирлянду)
+    </label>
     <fieldset class="settings-group">
       <legend>Настройки анимации</legend>
       <label for="animationDelay" class="setting">
@@ -91,12 +95,14 @@ const defaultColor = "#ff0000";
 
 export default {
   data: () => ({
+    hideTree: false,
     animationMethod: "",
     animationDelay: 0,
     animationDuration: 0,
     colors: []
   }),
   created() {
+    this.hideTree = this.$store.state.settings.hideTree;
     this.animationMethod = this.$store.state.settings.animationMethod;
     this.animationDelay = this.$store.state.settings.animationDelay / 1000;
     this.animationDuration = this.$store.state.settings.animationDuration;
@@ -105,9 +111,10 @@ export default {
   },
   beforeDestroy() {
     this.changeSettings({
+      hideTree: this.hideTree,
       animationMethod: this.animationMethod,
-      animationDelay: this.animationDelay * 1000,
-      animationDuration: this.animationDuration,
+      animationDelay: +this.animationDelay * 1000,
+      animationDuration: +this.animationDuration,
       colors: this.colors
     });
   },

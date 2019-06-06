@@ -1,143 +1,90 @@
 <template>
-  <svg
-    class="tree"
-    xmlns="http://www.w3.org/2000/svg"
-    xmlns:xlink="http://www.w3.org/1999/xlink"
-    viewBox="0 0 150 195"
-  >
-    <radialGradient id="stand" cx="50%" cy="50%" r="33%">
-      <stop offset="0%" style="stop-color: #001124" />
-      <stop offset="70%" style="stop-color: #002957" />
-      <stop offset="100%" style="stop-color: #003570" />
+  <g>
+    <path
+      fill="#FFFFFF"
+      d="M84.4,48.6C84.4,48.6,84.4,48.6,84.4,48.6C84.4,48.6,84.4,48.6,84.4,48.6z"
+    />
+    <radialGradient
+      id="SVGID_1_"
+      cx="73.9462"
+      cy="24.1888"
+      r="147.5315"
+      gradientUnits="userSpaceOnUse"
+    >
+      <stop offset="3.296700e-002" style="stop-color:#16498B" />
+      <stop offset="0.3187" style="stop-color:#061839" />
+      <stop offset="0.6319" style="stop-color:#16498B" />
+      <stop offset="1" style="stop-color:#081938" />
     </radialGradient>
-    <ellipse
-      fill="url(#stand)"
-      class="stand"
-      rx="33%"
-      ry="5%"
-      cx="53%"
-      cy="93%"
+    <path
+      fill="url(#SVGID_1_)"
+      stroke="#FFFFFF"
+      d="M106.8,139.8c4.6,2.7,9.5,0.5,9.5-2.5c0-6.6-11.7-15.7-16.2-21.2
+	c3.7,0.6,9.2,2.7,9.2-1.4c0-7.4-11.7-12.2-14.2-21c1.4-0.5,6.4,1.7,8.5-1.1c3.8-5.1-12.4-16.5-12.4-19c7,3.6,10.4-0.7,5.6-7.7
+	c-4.1-6.1-7.8-11.6-12.4-17.3c0,0,0,0,0,0c0,0,0,0,0,0c0.2,0.1,6,0.7,6.8-0.7c1.2-2-1.4-5.2-3-6.6c-8.7-7.2-11.9-17.1-14.2-17.1
+	c-2.3,0-19.9,23-17.6,25.7c0.8,3.2,6.4,1.7,7.3,1.3c-3.4,6.2-14,12-14,17.6c0,4.7,3.6,3.5,8.2,3.5c-3,3.7-13,10.6-13,16.6
+	c0,3.7,4.1,3.3,8.3,2.4c-5.1,6.2-7.9,6.3-12.4,10.4c-9.1,8.1,3.6,11.8,7.8,9.5c-2.1,2.6-4.6,3.4-9.5,9.2c-10.5,12.7,4.1,13,8.2,13.1
+	c-4.6,2.7-34.7,23-22.2,27c5.1,1.6,16.8-1.1,18.8-3.1c-0.9,5.2-2.3,8.3,1.3,12.6c4,4.9,12.7-2.5,15.3-6.5c4.3,3.7,3,9.7,9.6,9.7
+	c4.3,0,7.1-7.5,8.9-12.1c0.4,0.4,20.5,23.7,19.5,5.4c2.3,2.6,12.9,8.9,15.2,4.5c2.3-4.4,0.5-5.8-2.1-10.4c3,1.6,15.3,10.8,16.8,3
+	C129.1,158.7,110.6,144.7,106.8,139.8z"
     />
-    <component
-      v-for="blub in animationModel"
-      :key="blub.name"
-      :is="blub.name"
-      :color="getColor(blub)"
-      :style="{ transition: `fill ${animationDuration}s ease-in-out` }"
+    <path
+      fill="#FFFFFF"
+      d="M109.9,159c2.6,4.6,3.6,6.4,2.1,10c-2,4.7-12.3-2.2-14.6-4.8c0.9,18.3-18.4-5-18.8-5.4
+	c-1.8,4.7-4.6,12.1-8.9,12.1c-6.6,0-5.3-6-9.6-9.7c-2.6,4-11.7,11.9-15.3,6.5c-2.3-3.4-1.6-6.1-0.6-11.3c-2,2-14.3,3.4-19.4,1.8
+	c-3.4-1.1,0-6.9,6.8-13.5c-7.6,6.4-13.7,13.6-6.8,15.9c5.1,1.6,16.8-1.1,18.8-3.1c-0.9,5.2-2.3,8.3,1.3,12.6
+	c4,4.9,12.7-2.5,15.3-6.5c4.3,3.7,3,9.7,9.6,9.7c4.3,0,7.1-7.5,8.9-12.1c0.4,0.4,20.5,23.7,19.5,5.4c2.3,2.6,12.9,8.9,15.2,4.5
+	c2.3-4.4,0.5-5.8-2.1-10.4c3,1.6,15.3,10.8,16.8,3C126.5,170.5,113,160.6,109.9,159z"
     />
-  </svg>
+    <path
+      fill="#FFFFFF"
+      d="M86.4,133.3c-2.3,0-0.5,9.5-1.9,13.5c-3.4,9.6-19.6-11.5-21-9.8c-3,3.7-7.2,8-12,7.7
+	c-4.6-0.3-2.4-10.6-2.9-11.8c-3.1-0.5-9.1,0.2-10.5-4.1c-1.9-5.3,2.8-9.1,5.6-11.6c2.4-2.1,4.8-5.9,4.8-5.9
+	c-2.1,2.6-4.7,3.4-9.5,9.2c-4.4,5.3-5.7,9.8,0.2,12c1.9,0.7,4,0.9,5.9,1.1c1.4,0.1,2.5-0.6,2.5,1.4c0,2.4-0.5,4.7-0.3,6.9
+	c0.8,6.2,2.3,7.3,6.1,6c3.2-1.1,9.9-9.7,10.6-9.7c1.4,0,13.8,16.1,19.8,13.8c3.3-1.3,1.4-16.9,2.9-16.9c1,0.5,6.4,12.1,11.6,11
+	C93.3,146,87.4,133.3,86.4,133.3z"
+    />
+    <path
+      fill="#FFFFFF"
+      d="M95.1,93.7c2.7,11.7,10.2,11.8,11.9,17.9c1.4,5-3.5,1.7-5.9,2.2c-3.9,0.8-2.5,3.5-5.1,6
+	c-3.1,3-8.4-2.1-11-3.7c-4-2.4-1.1,2.4-4,4.9c-3.7,3.1-8.7-5.3-11.9-7.1c-3.1-1.8-9.5,13.8-14.4,8.6c-3.1-3.2-3.5-7.4-3.1-11.4
+	c-1.2,2.4-2,7.3-1.2,10c4.3,13.5,14.2-3,19-2.7c3.6,0.3,5.4,7.9,9.5,7.2c2.8-0.5,4.9-5.9,5.8-7.8c3.3,2.3,9,9.7,12.9,6.5
+	c3.1-2.5-0.9-8.6,5-7.5c1.7,0.3,6.6,2.1,6.6-1.9C109.4,107.4,97.6,102.5,95.1,93.7z"
+    />
+    <path
+      fill="#FFFFFF"
+      d="M63.6,51.2c-4.7,7.7-14,12-14,17.6c0,4.7,3.6,3.5,8.2,3.5c-3,3.7-13,10.6-13,16.6c0,3.7,4.1,3.3,8.3,2.4
+	c0,0-5.1,0.7-7.1-1.8c-2-2.4,14.8-18.7,14.8-19.8c0-1.1-9.1,2.5-9.9,0.4C48.4,64.4,58.3,61.6,63.6,51.2z"
+    />
+    <path
+      fill="#FFFFFF"
+      d="M87,98.8c-3.5,3.8-8.4-6.1-9.9-9.1c-1,2.5-2.5,11.8-5.6,10.7c-1.9-0.7-4.2-9-4.8-11.9
+	c-1.9,2.2-7.6,10.1-10.2,7.4c-1.4-1.2,1.9-9.7,1.9-9.7c-2,3-5.7,10-2,11.9c3.1,1.6,7.9-2.9,9.9-4.7c0.9,3.6,3.3,9.9,6.3,9.8
+	c3.8-0.1,3.6-6.6,4.9-9.2c3.5,4.9,9.7,14.5,11.1,8.6c0.8-3.4-0.2-7.7-0.4-10.6c1.3,2.4,7.3,1.7,7.1,1.7c-4.3-0.9-6.1-2.8-7.9-4.9
+	C86.8,91.8,88.2,97.4,87,98.8z"
+    />
+    <path
+      fill="#FFFFFF"
+      d="M76.8,27.8c0,0,3.5,6.7,5.2,9.3c0.6,0.9,3.2,4.5,0.8,4c-1.3-0.3-5.6-4.6-6.6-4.6c-0.9,0-1,4.1-2.1,5.1
+	c-1.4,1.2-2.7-2.1-3.4-3c-0.6-0.8-4.5,4.2-5.5,1.6c-0.5-1.2,3.2-7.7,3.8-9.5c-1,1.5-6.4,9.5-5.2,11c1.4,1.7,5.4-1.6,6.7-2.4
+	c0.7,1.1,2,4.5,3.4,4.4c1.3-0.1,1.5-5.4,2.8-5.7c0.9,0,6.2,6.6,8.3,3.6c0.7-1-1.4-3.2-1.9-3.9C80.9,34.5,78.9,31.3,76.8,27.8z"
+    />
+    <path
+      fill="#FFFFFF"
+      d="M76.6,56.5c-1.3,0.6-2.9-2.3-3.5-3.4c-1.1-2-1.3-2.1-2.8-0.3c-0.8,0.9-2.3,3.2-3.5,2.4c-1.3-0.8-2-4.4-2.5-6
+	c-1.4,1.1-4.9,2.6-6.3,1.1c-3.9-4.3,15.9-26,15.9-26c-2.3,0-19.9,23-17.6,25.7c0.6,2.5,3.8,2.1,5.4,1.8c1-0.2,1.6-0.7,2.2,0.2
+	c0.7,1.1,0.9,2.6,1.7,3.7c1,1.3,2.2,1.2,3.4,0.2c0.8-0.7,1.4-2.1,2.2-2.7c0.7-0.5,0.8-0.2,1.3,0.6c0.8,1.2,2.5,4.1,4.1,3.9
+	c1.6-0.2,1.7-3.8,1.7-5.2C77.7,53.4,77.6,56.1,76.6,56.5z"
+    />
+    <path
+      fill="#FFFFFF"
+      d="M73.4,64.3C73.4,64.3,73.4,64.4,73.4,64.3C73.4,64.4,73.4,64.4,73.4,64.3C73.4,64.1,73.4,64,73.4,64.3z"
+    />
+    <path
+      fill="#FFFFFF"
+      d="M84.4,48.6c0,0,11.7,18.1,9.7,20.6c-2.7,2.7-8-3.7-10.5-3.7c-1.2,1.4,0.2,7.5-1,8c-1.2,0.5-2.5-6.5-4.1-6.5
+	c-1.7,0-3.6,5.9-5,5.9c-1.4,0-0.7-5.7-0.1-8.4c-1.8,3.1-3.9,8.8-2.4,10.7c1.5,1.8,5.3-5,7.5-4.7c1.7,0.2,3.1,8.6,5.4,7.4
+	c2.4-1.2,1.4-5.3,2.3-7.6c2.5,3.1,9,5.3,10.6,4.7c3.9-1.6,2.3-5.3,0-8.9C92.9,59.6,89,54.2,84.4,48.6z"
+    />
+  </g>
 </template>
-
-<script>
-import { mapState } from "vuex";
-
-const blubs = {};
-const ComponentContext = require.context("./blubs/", false, /\.vue$/i);
-ComponentContext.keys().forEach(componentFilePath => {
-  const componentName = componentFilePath
-    .split("/")
-    .pop()
-    .split(".")[0];
-  blubs[componentName] = () => import("./blubs/" + componentName);
-});
-
-export default {
-  data: () => ({
-    colorOffset: 0,
-    animationModel: []
-  }),
-  components: {
-    ...blubs
-  },
-  created() {
-    this.animationModel = Object.keys(blubs).map((blub, index) => ({
-      name: blub,
-      off: false,
-      color: this.computeItemColor(index, "tree")
-    }));
-    this.colorize();
-  },
-  computed: {
-    ...mapState("settings", [
-      "animationMethod",
-      "animationDelay",
-      "animationDuration",
-      "defaultColors",
-      "colors"
-    ]),
-    colorsNumber() {
-      return this.colors.length;
-    }
-  },
-  methods: {
-    colorize() {
-      const off = !this.animationModel[0].off;
-      const remnant = this.animationModel[0].off ? 1 : 0;
-      switch (this.animationMethod) {
-        case "onOff":
-          this.colorOffset = 0;
-          this.animationModel.forEach((element, index) => {
-            element.off = off;
-            element.color = this.computeItemColor(index);
-          });
-          break;
-        case "replacement":
-          this.colorOffset += 1;
-          this.animationModel.forEach((element, index) => {
-            element.off = false;
-            element.color = this.computeItemColor(index);
-          });
-          break;
-        case "сombined":
-          this.colorOffset += 1;
-          this.animationModel.forEach((element, index) => {
-            element.off = off;
-            element.color = this.computeItemColor(index);
-          });
-          break;
-        case "track":
-          this.colorOffset += 1;
-          this.animationModel.forEach((element, index) => {
-            element.off = index % 2 === remnant;
-            element.color = this.computeItemColor(index);
-          });
-          break;
-
-        default:
-          break;
-      }
-      setTimeout(this.colorize, this.animationDelay);
-    },
-    computeItemColor(index) {
-      if (
-        index < this.animationModel.length &&
-        this.animationModel[index].off
-      ) {
-        return this.defaultColors["tree"];
-      }
-      let currentColorIndex = index + this.colorOffset;
-      while (currentColorIndex >= this.colorsNumber) {
-        currentColorIndex -= this.colorsNumber;
-      }
-      if (currentColorIndex < 0) {
-        currentColorIndex = 0;
-      }
-      return this.colors[currentColorIndex];
-    },
-    getColor(value) {
-      const item = this.animationModel.find(element => element === value);
-      return item ? item.color : this.defaultColors["tree"];
-    }
-  }
-};
-</script>
-
-<style lang="scss" scoped>
-.tree {
-  height: calc(100vh - 50px);
-  min-height: 165px;
-  width: 100%;
-  display: block;
-  margin: 0 auto;
-}
-</style>

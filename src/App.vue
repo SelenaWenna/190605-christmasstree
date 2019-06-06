@@ -16,13 +16,13 @@
 </template>
 
 <script>
-import Tree from "./components/Tree";
+import Easel from "./components/Easel";
 import Settings from "./components/Settings";
 
 const tabs = [
   {
     title: "Дерево",
-    component: "Tree"
+    component: "Easel"
   },
   {
     title: "Настройки",
@@ -32,7 +32,7 @@ const tabs = [
 export default {
   name: "app",
   components: {
-    Tree,
+    Easel,
     Settings
   },
   data: () => ({
