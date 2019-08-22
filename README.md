@@ -1,4 +1,4 @@
-# cristmasstree
+# Cristmass tree
 
 ## Project setup
 ```
